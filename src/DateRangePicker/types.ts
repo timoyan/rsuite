@@ -3,6 +3,8 @@ import { DATERANGE_DISABLED_TARGET } from '../utils/constants';
 
 export type ValueType = [Date?, Date?];
 
+export type DateRange = [Date, Date];
+
 export interface RangeType {
   label: React.ReactNode;
   closeOverlay?: boolean;

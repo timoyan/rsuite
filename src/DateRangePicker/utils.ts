@@ -1,4 +1,4 @@
-import { RangeType, ValueType } from './types';
+import { DateRange, RangeType, ValueType } from './types';
 import { DateUtils } from '../utils';
 
 export const setTimingMargin = (date, way = 'left'): Date =>
@@ -41,7 +41,7 @@ export const getDefaultRanges = (): RangeType[] => {
   ];
 };
 
-export const isSameRange = (source: ValueType, dest: ValueType, format: string) => {
+export const isSameRange = (source: DateRange, dest: DateRange, format: string) => {
   let result =
     DateUtils.isSameDay(source?.[0], dest?.[0]) && DateUtils.isSameDay(source?.[1], dest?.[1]);
 

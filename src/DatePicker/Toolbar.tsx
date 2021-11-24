@@ -17,7 +17,7 @@ export interface ToolbarProps extends WithAsProps {
   disabledOkBtn?: (value?: ToolbarValue) => boolean;
   disabledShortcut?: (value?: ToolbarValue) => boolean;
   onOk?: (event: React.MouseEvent) => void;
-  onClickShortcut?: (value: ToolbarValue, closeOverlay?: boolean, event?: React.MouseEvent) => void;
+  onClickShortcut?: (value: ToolbarValue, closeOverlay: boolean, event: React.MouseEvent) => void;
 }
 
 /**
@@ -87,7 +87,7 @@ const Toolbar: RsRefForwardingComponent<'div', ToolbarProps> = React.forwardRef(
               if (disabled) {
                 return;
               }
-              onClickShortcut?.(value, closeOverlay, event);
+              onClickShortcut?.(value, closeOverlay ?? false, event);
             };
 
             return (

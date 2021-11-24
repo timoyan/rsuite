@@ -38,7 +38,7 @@ export interface CalendarProps
   disabledSeconds?: (second: number, date: Date) => boolean;
 
   /** Format str */
-  format?: string;
+  format: string;
 
   /** Hidden hours */
   hideHours?: (hour: number, date: Date) => boolean;
@@ -130,7 +130,7 @@ const Calendar: RsRefForwardingComponent<'div', CalendarProps> = React.forwardRe
       ...rest
     } = props;
     const { withClassPrefix, merge } = useClassNames(classPrefix);
-    const isDisabledDate = (date: Date) => disabledDate?.(date);
+    const isDisabledDate = (date: Date) => disabledDate?.(date) ?? false;
     const isTimeDisabled = (date: Date) => DateUtils.disabledTime(props, date);
     const handleMoveForward = useCallback(() => {
       onMoveForward?.(DateUtils.addMonths(calendarDate, 1));
